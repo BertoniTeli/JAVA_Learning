@@ -8,12 +8,29 @@ public class JAVA_Learning
 
         System.out.println("-----------------------------------------------");
         System.out.println("\nE1 - Print all numbers from 1 to 100");
+        System.out.println("""
+                Update with FizzBuzz!
+                Write a program that prints the numbers from 1 to 100.
+                For the multiples of 3 print "Fizz" and for the multiples of 5 print "Buzz" instead
+                For the numbers that are multiples of both 3 and 5 print "FizzBuzz"
+                """);
         int i;
         for (i = 1; i <= 100; i++)
         {
-            System.out.print(i+" ");
-            // Used "System.out.print()" in order to print vertically
-        }
+            if (i % 3 == 0 & i % 5 == 0)
+            {
+                System.out.println("FizzBuzz");
+            }
+            else if (i % 3 == 0 & i % 5 != 0)
+            {
+                System.out.println("Fizz");
+            }
+            else if (i % 5 == 0)
+            {
+                System.out.println("Buzz");
+            }
+            else
+                System.out.println(i+" ");
 
         // Exercise 2 -----------------------------------------------
 
@@ -118,13 +135,13 @@ public class JAVA_Learning
         System.out.println("-----------------------------------------------");
         System.out.println("\nE6 - Enter, verify and add 2 odd numbers");
 
-        int a,b = 0;
+        int a,b;
         System.out.println("\n Please enter the first odd number: ");
         a = sc.nextInt();
         while (a %2 == 0)
         {
             System.out.println("\n This number is even. Please enter an odd number: ");
-            a = sc.nextInt(); // Asa rescrie valoarea lui 'a' pana cand gaseste un numar impar.
+            a = sc.nextInt(); // How I made sure that the entered 'a' is odd.
         }
         System.out.println("\n Please enter the second odd number: ");
         b = sc.nextInt();
