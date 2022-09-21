@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class JAVA_Learning
 {
+    private static String RomanNuneral;
     public static void main(String[] args)
     {
         // Exercise 1 -----------------------------------------------
@@ -188,7 +189,7 @@ public class JAVA_Learning
 
         System.out.println("-----------------------------------------------");
         System.out.println("""
-                E9 - Give a number between 1 and 3000. Convert the number to Roman Nunerals.
+                E9 - Give a number between 1 and 3000. Convert the number to Roman nunerals.
                 I = 1 | V = 5 | X = 10 | L = 50 | C = 100 | D = 500 | M = 1000
                 Example: 2,421 = MM + CD + XX + I = MMCDXXI.""");
 
@@ -209,41 +210,41 @@ public class JAVA_Learning
         if (NUMBER >= 100)
         {
             LatinNumber = NUMBER / 100;
-            N2 = RomanNuneralsCalculator(LatinNumber, "M", "D", "C");
+            N2 = RomanNuneralCalculator(LatinNumber, "M", "D", "C");
             NUMBER = NUMBER - LatinNumber * 100;
         }
         if (NUMBER >= 10)
         {
             LatinNumber = NUMBER / 10;
-            N3 = RomanNuneralsCalculator(LatinNumber, "C", "L", "X");
+            N3 = RomanNuneralCalculator(LatinNumber, "C", "L", "X");
             NUMBER = NUMBER - LatinNumber * 10;
         }
         if (NUMBER >= 1)
         {
             LatinNumber = NUMBER;
-            N4 = RomanNuneralsCalculator(LatinNumber, "X", "V", "I");
+            N4 = RomanNuneralCalculator(LatinNumber, "X", "V", "I");
         }
-        System.out.println("\nNumber " + InitialNumber + " in Roman Nunerals is: " + N1 + N2 + N3 + N4);
+        System.out.println("\nNumber " + InitialNumber + " in Roman Numbers is: " + N1 + N2 + N3 + N4);
 
     }
-    public static String RomanNuneralsCalculator(int LatinNumber, String UPPER, String MIDDLE, String LOWER)
+    public static String RomanNuneralCalculator(int LatinNumber, String UPPER, String MIDDLE, String LOWER)
     {
         if (LatinNumber == 9)
         {
-            RomanNunerals = LOWER + UPPER;
+            RomanNuneral = LOWER + UPPER;
         }
         else if (LatinNumber >= 5)
         {
-            RomanNunerals = MIDDLE + LOWER.repeat(LatinNumber - 5);
+            RomanNuneral = MIDDLE + LOWER.repeat(LatinNumber - 5);
         }
         else if (LatinNumber == 4)
         {
-            RomanNunerals = LOWER + MIDDLE;
+            RomanNuneral = LOWER + MIDDLE;
         }
         else if (LatinNumber >= 1)
         {
-            RomanNunerals = LOWER.repeat(LatinNumber);
+            RomanNuneral = LOWER.repeat(LatinNumber);
         }
-        return RomanNunerals;
+        return RomanNuneral;
     }
 }
