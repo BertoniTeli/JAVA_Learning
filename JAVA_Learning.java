@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class JAVA_Learning
@@ -167,8 +168,8 @@ public class JAVA_Learning
 
         System.out.println("-----------------------------------------------");
         System.out.println("""
-                E8 - Give two numbers (length and width). Verifi if it is a square and
-                     calculate its perimeter and area.""");
+                \nE8 - Give two numbers (length and width). Verifi if it is a square and
+                       calculate its perimeter and area.""");
 
         String shape = "RECTANGLE";
         System.out.println("Enter length: ");
@@ -189,9 +190,68 @@ public class JAVA_Learning
 
         System.out.println("-----------------------------------------------");
         System.out.println("""
-                E9 - Give a number between 1 and 3000. Convert the number to Roman nunerals.
-                I = 1 | V = 5 | X = 10 | L = 50 | C = 100 | D = 500 | M = 1000
-                Example: 2,421 = MM + CD + XX + I = MMCDXXI.""");
+                \nE9 - Check the given string to determine whether one is an ANAGRAM of the other;
+                       Example: All the letters of "Desperation" can be rearranged to form the
+                       phase "A rope ends it".""");
+
+        String S1 = "Desperation";
+        String S2 = "A rope ends it";
+
+        char A;
+        char B;
+
+        // First let's get rid of the spaces and the upper cases.
+        S2 = S2.replace(" ", "");
+        S1 = S1.toLowerCase();
+        S2 = S2.toLowerCase();
+
+        char[] S1A = S1.toCharArray();
+        char[] S2A = S2.toCharArray();
+
+        // Now for the comparison...
+        if (S1.length() == S2.length())
+        {
+            System.out.println("\nThe strings have the same number of characters.");
+
+        }
+        else
+        {
+            System.out.println("\nNo anagram posible! The two strings have different number of characters.");
+        }
+
+        /* Throughout the for loop, whenever a letter from first array matches another from second array,
+        the two letters are changed with "w".*/
+        for (i = 0; i < S1.length(); i++)
+        {
+            A = S1A[i];
+            for (j = 0; j < S2.length(); j++)
+            {
+                B = S2A[j];
+                if (A == B)
+                {
+                    S2A[j] = 'w';
+                    break;
+                }
+            }
+            S1A[i] = 'w';
+        }
+
+        if (Arrays.equals(S1A, S2A))
+        {
+            System.out.println("\nThe two stings are anagramt to one another.");
+        }
+        else
+        {
+            System.out.println("\nNo anagram posible!");
+        }
+
+        // Exercise 10 ---------------------------------------------
+
+        System.out.println("-----------------------------------------------");
+        System.out.println("""
+                \nE10 - Give a number between 1 and 3000. Convert the number to Roman nunerals.
+                  I = 1 | V = 5 | X = 10 | L = 50 | C = 100 | D = 500 | M = 1000
+                  Example: 2,421 = MM + CD + XX + I = MMCDXXI.""");
 
         System.out.println("Insert a number between 1 and 3000 : ");
         StringBuilder N1 = new StringBuilder();
